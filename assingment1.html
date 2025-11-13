@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — programer</title>
+    <style>
+        :root{
+            --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+            --radius:12px; --max-width:1000px;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; background:linear-gradient(180deg,#071021 0%, #071428 45%, #071a2a 100%);
+            color:#e6eef6; display:flex; align-items:center; justify-content:center; min-height:100vh;
+            padding:32px;
+        }
+        .wrap{
+            width:100%; max-width:var(--max-width); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+            border-radius:var(--radius); padding:24px; box-shadow:0 6px 30px rgba(2,6,23,0.7);
+            display:grid; grid-template-columns:320px 1fr; gap:20px;
+        }
+        @media (max-width:880px){ .wrap{ grid-template-columns:1fr; } }
+        /* Sidebar */
+        .sidebar{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px; padding:18px; min-height:200px;
+            display:flex; flex-direction:column; gap:12px;
+        }
+        .profile{
+            display:flex; gap:12px; align-items:center;
+        }
+        .avatar{
+            width:72px; height:72px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#7c3aed);
+            display:flex; align-items:center; justify-content:center; font-weight:700; color:#071428; font-size:20px;
+        }
+        h1{font-size:18px; margin:0 0 2px 0; letter-spacing:0.2px}
+        p.role{margin:0; color:var(--muted); font-size:13px}
+        .contact, .section{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent); padding:12px; border-radius:10px}
+        .contact a{color:var(--accent); text-decoration:none; display:block; font-size:14px; margin-bottom:6px}
+        .contact small{display:block; color:var(--muted); font-size:12px}
+        .skills-list{display:flex; flex-direction:column; gap:10px}
+        .skill{
+            display:flex; flex-direction:column; gap:6px;
+        }
+        .skill .title{display:flex; justify-content:space-between; font-size:13px; color:var(--muted)}
+        .bar{
+            height:10px; background:var(--glass); border-radius:999px; overflow:hidden;
+        }
+        .bar > span{
+            display:block; height:100%; background:linear-gradient(90deg,var(--accent), #7c3aed);
+            border-radius:999px;
+        }
+        /* Main content */
+        .main{
+            padding:18px; background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+            border-radius:12px; min-height:200px; display:flex; flex-direction:column; gap:16px;
+        }
+        .about{color:var(--muted); line-height:1.5; font-size:14px}
+        .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+        .project{
+            background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;
+        }
+        .project h3{margin:0 0 6px 0; font-size:15px}
+        .project p{margin:0; color:var(--muted); font-size:13px}
+        .tags{margin-top:8px; display:flex; gap:6px; flex-wrap:wrap}
+        .tag{background:rgba(255,255,255,0.025); color:var(--muted); padding:6px 8px; border-radius:999px; font-size:12px}
+        footer{color:var(--muted); font-size:13px; text-align:center; margin-top:8px}
+        /* utility */
+        .muted{color:var(--muted)}
+    </style>
+</head>
+<body>
+    <div class="wrap" role="main">
+        <aside class="sidebar" aria-label="Sidebar">
+            <div class="profile">
+                <div class="avatar" aria-hidden="true">JB</div>
+                <div>
+                    <h1 id="name"> jitendra bhatavdekar</h1>
+                    <p class="role">Frontend Developer • UI/UX Enthusiast •Exploring Tech, Projects & Career Opportunities</p>
+                </div>
+            </div>
+
+            <div class="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" style="font-size:13px;margin:0 0 8px 0">Contact</h2>
+                <a href="mailto:programer@example.com">programer@gmail.com</a>
+                <a href="tel:+1234567890">+91 9234001107</a>
+                <small class="muted">Location: New York, united States</small>
+            </div>
+
+            <div class="section" aria-labelledby="skills-heading">
+                <h2 id="skills-heading" style="font-size:13px;margin:0 0 10px 0">Skills</h2>
+                <div class="skills-list">
+                    <div class="skill">
+                        <div class="title"><span>HTML & CSS</span><span class="muted">90%</span></div>
+                        <div class="bar" aria-hidden="true"><span style="width:90%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div class="title"><span>JavaScript</span><span class="muted">80%</span></div>
+                        <div class="bar" aria-hidden="true"><span style="width:80%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div class="title"><span>React</span><span class="muted">75%</span></div>
+                        <div class="bar" aria-hidden="true"><span style="width:75%"></span></div>
+                    </div>
+                    <div class="skill">
+                        <div class="title"><span>Design</span><span class="muted">70%</span></div>
+                        <div class="bar" aria-hidden="true"><span style="width:70%"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" aria-labelledby="resume-heading">
+                <h2 id="resume-heading" style="font-size:13px;margin:0 0 8px 0">Links</h2>
+                <a href="#" target="_blank" rel="noopener">GitHub · github.com/programer</a>
+                <a href="#" target="_blank" rel="noopener">LinkedIn · linkedin.com/in/programer</a>
+            </div>
+        </aside>
+
+        <main class="main" aria-label="Main content">
+            <section class="about" aria-labelledby="about-heading">
+                <h2 id="about-heading" style="margin:0 0 8px 0">About</h2>
+                <p>
+                   "Creative and detail-oriented Web Developer with a passion for building responsive, user-friendly websites and web applications. Skilled in front-end and back-end technologies including HTML, CSS, JavaScript, React, Node.js, and MySQL. Adept at transforming complex problems into elegant digital solutions with a strong focus on performance, accessibility, and modern UI/UX design. Always eager to learn, collaborate, and push the boundaries of web innovation."
+                </p>
+            </section>
+
+            <section aria-labelledby="projects-heading">
+                <h2 id="projects-heading" style="margin:0 0 8px 0">Selected Projects</h2>
+                <div class="grid-2">
+                    <article class="project">
+                        <h3>Project One</h3>
+                        <p class="muted">CineBook – Theater Booking System 
+                            A dynamic web app for booking movie tickets with real-time seat selection, showtime filtering, and payment integration. Developed using React for the frontend and Node.js with MongoDB for the backend. Optimized for mobile and desktop.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+                        </div>
+                    </article>
+                    <article class="project">
+                        <h3>Project Two</h3>
+                        <p class="muted">  SwiftBank – Online Banking System
+                            A secure online banking platform allowing users to manage accounts, transfer funds, and pay bills. Built with React for the frontend and Express.js with PostgreSQL for the backend. Features include two-factor authentication and transaction history.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React</span><span class="tag">API</span><span class="tag">Design</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section aria-labelledby="experience-heading" style="margin-top:12px">
+                <h2 id="experience-heading" style="margin:0 0 8px 0">Experience & Education</h2>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                    <div class="muted" style="font-size:14px"><strong>web developer </strong> — google <span class="muted">· 2021–Present</span></div>
+                    <div class="muted" style="font-size:14px"><strong>B.tech(CSE)</strong> — howard univercity <span class="muted">· 2017–2021</span></div>
+                </div>
+            </section>
+
+            <footer>
+                Built with HTML & CSS — Customize this file at d:/documents of D/htmlfiles/myportpholio.html
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
