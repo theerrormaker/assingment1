@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive Task Manager</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Small overrides specific to the task manager */
+    .task-app { max-width:800px; margin:28px auto; }
+    .task-header { display:flex; align-items:center; justify-content:space-between; gap:12px }
+    form.add-task { display:flex; gap:8px; margin-top:12px }
+    .task-input { flex:1; }
+    .task-list { margin-top:18px; display:flex; flex-direction:column; gap:10px }
+    .task-item { display:flex; align-items:center; gap:12px; padding:12px; background:rgba(255,255,255,0.02); border-radius:10px }
+    .task-item.completed { opacity:0.6; text-decoration:line-through }
+    .task-title { flex:1 }
+    .task-controls button { margin-left:6px }
+    .meta { color:var(--muted); font-size:13px }
+  </style>
+</head>
+<body>
+  <div class="container task-app" role="application" aria-label="Task manager">
+    <div class="task-header">
+      <h1>Task Manager</h1>
+      <div class="meta" id="task-stats">0 tasks</div>
+    </div>
+
+    <form id="addForm" class="add-task" aria-label="Add task">
+      <input id="taskTitle" class="task-input" type="text" placeholder="New task title" aria-label="Task title" required>
+      <button type="submit" class="btn">Add</button>
+    </form>
+
+    <div class="task-list" id="taskList" aria-live="polite" aria-relevant="additions removals">
+      <!-- tasks rendered here -->
+    </div>
+
+    <div style="margin-top:14px; display:flex; gap:8px; align-items:center">
+      <button id="clearCompleted" class="btn" style="background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.03);">Clear completed</button>
+      <button id="clearAll" class="btn" style="background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.03);">Clear all</button>
+      <div style="flex:1"></div>
+      <small class="muted">Tasks saved to localStorage</small>
+    </div>
+
+  </div>
+
+  <script src="Untitled-1.js"></script>
+</body>
+</html>
