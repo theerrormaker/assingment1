@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="restaurant">
+  <div class="site-inner">
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🍴 My Restaurant</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reservation">Reservations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Welcome to My Restaurant</h1>
+        <p>Delicious food, cozy ambiance, unforgettable experiences — reserve a table tonight.</p>
+        <a href="#reservation" class="btn">Reserve Now</a>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are a family-owned restaurant serving authentic local cuisine with love and passion.</p>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><strong>Starter</strong><span>Soup</span></div>
+      <div class="menu-item"><strong>Main</strong><span>Curry</span></div>
+      <div class="menu-item"><strong>Dessert</strong><span>Cake</span></div>
+      <div class="menu-item"><strong>Drinks</strong><span>Juice & Cocktails</span></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="food1.jpg" loading="lazy" data-caption="Plated starter with fresh garnish" alt="Appetizing plated dish with vibrant garnish, showcasing the restaurant's culinary artistry and attention to detail">
+      <img src="food2.jpg" loading="lazy" data-caption="Signature main course" alt="Beautifully presented main course with complementary sides, highlighting fresh ingredients and professional plating">
+      <img src="interior.jpg" loading="lazy" data-caption="Cozy dining interior" alt="Warm and inviting restaurant dining room with comfortable seating, ambient lighting, and elegant decor creating a welcoming atmosphere">
+    </div>
+  </section>
+
+  <!-- Reservations -->
+  <section id="reservation" class="reservation">
+    <h2>Reserve a Table</h2>
+    <form id="reservationForm">
+      <div class="form-row"><input type="text" name="name" placeholder="Name" required></div>
+      <div class="form-row"><input type="tel" name="phone" placeholder="Phone" required></div>
+      <div class="form-row two-col">
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+      </div>
+      <div class="form-row"><input type="number" name="guests" min="1" placeholder="Guests" required></div>
+      <div class="form-row"><button type="submit" class="btn">Book Now</button>
+        <button type="button" id="exportReservations" class="btn" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04);">Export reservations</button>
+      </div>
+      <div id="reserveMessage" class="muted" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <!-- Lightbox (hidden) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox-prev" aria-label="Previous">◀</button>
+    <div class="lightbox-content">
+      <img src="" alt="">
+      <div class="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-next" aria-label="Next">▶</button>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 123 Main Street, City</p>
+    <p>📞 +91 98765 43210</p>
+    <p>✉️ info@myrestaurant.com</p>
+    <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Restaurant. All rights reserved.</p>
+  </footer>
+
+  </div>
+  <script src="resto.js"></script>
+  <script src="lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Revamped restaurant theme — teal → magenta gradient */
+:root{
+  --bg:#051018;
+  --surface: rgba(255,255,255,0.03);
+  --card: rgba(255,255,255,0.025);
+  --muted:#aab6c6;
+  --text:#eff6fb;
+  --accent-1:#06d6a0; /* teal */
+  --accent-2:#9b5cff; /* magenta/violet */
+  --accent-grad: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  --radius:12px;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background: linear-gradient(180deg,#02111a 0%, #051018 100%); color:var(--text); -webkit-font-smoothing:antialiased;
+}
+
+/* site container helper (pages that need centered content) */
+.site-inner{ max-width:1200px; margin:0 auto; padding:28px; }
+
+/* NAVBAR */
+.navbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:10px }
+.navbar .logo{ font-weight:700; color:var(--text); font-size:18px }
+.nav-links{ list-style:none; display:flex; gap:14px; margin:0; padding:0 }
+.nav-links a{ color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px; transition:all .18s ease }
+.nav-links a:hover{ color:var(--text); background:var(--surface) }
+.hamburger{ display:none; font-size:22px; color:var(--text); cursor:pointer }
+
+/* HERO */
+.hero{ padding:56px 20px; margin:18px 0; border-radius:12px; overflow:hidden }
+.hero-inner{ display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center }
+.hero-text h1{ font-size:40px; margin:0 0 10px; color:var(--text); line-height:1.05 }
+.hero-text p{ color:var(--muted); max-width:56ch; margin-bottom:18px }
+.hero-image{ height:280px; border-radius:12px; background:linear-gradient(135deg, rgba(9,105,91,0.12), rgba(155,92,255,0.10)); box-shadow: inset 0 -20px 80px rgba(0,0,0,0.45); }
+.hero .btn{ display:inline-block; padding:12px 18px; border-radius:10px; background:var(--accent-grad); color:#03121a; font-weight:700; box-shadow: 0 8px 28px rgba(9,105,91,0.12); transition:transform .14s ease }
+.hero .btn:hover{ transform:translateY(-3px) }
+
+/* SECTIONS */
+section{ margin:20px 0 }
+.about, .menu, .gallery, .reservation, .contact{ padding:24px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:12px }
+
+/* Menu grid */
+.menu-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px }
+.menu-item{ background:var(--card); padding:16px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; color:var(--text); box-shadow:0 6px 20px rgba(2,6,23,0.6) }
+.menu-item strong{ font-weight:700 }
+.menu-item span{ color:var(--muted) }
+
+/* Gallery cards */
+.gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px }
+.gallery-grid img{ width:100%; height:160px; object-fit:cover; border-radius:10px; display:block; transition:transform .22s ease, box-shadow .22s ease }
+.gallery-grid img:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(9,105,91,0.08) }
+
+/* Reservation */
+.reservation form{ display:flex; flex-direction:column; gap:12px; max-width:520px }
+.reservation input, .reservation select, .reservation button{ padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color:var(--text) }
+.reservation .two-col{ display:flex; gap:10px }
+.reservation button{ background:var(--accent-grad); color:#03121a; font-weight:700; border:none; cursor:pointer }
+
+/* Contact map */
+.map-wrap iframe{ width:100%; height:220px; border:0; border-radius:10px }
+
+/* Footer */
+footer{ text-align:center; color:var(--muted); padding:18px 0 }
+
+/* Small interactions */
+.menu-item, .gallery-grid img{ will-change:transform }
+.btn{ border-radius:10px; padding:10px 14px; display:inline-block; text-decoration:none }
+
+/* Responsive */
+@media (max-width:980px){ .hero-inner{ grid-template-columns:1fr } .menu-grid{ grid-template-columns:1fr } .gallery-grid{ grid-template-columns:repeat(2,1fr) } }
+@media (max-width:680px){ .nav-links{ display:none } .hamburger{ display:block } .gallery-grid{ grid-template-columns:1fr } .hero-text h1{ font-size:28px } .hero-image{ height:180px } }
+
+/* Utility */
+.muted{ color:var(--muted) }
+
+/* End of revamp */
